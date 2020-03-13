@@ -18,6 +18,7 @@
       <input id="id" name="id" type="hidden" value="@vendorId">
       <button type="submit" id="delete-vendor" class="btn btn-block">DELETE VENDOR</button>
     </form>
+    <p>@Model["vendor"].Name: @Model["vendor"].Description</p>
   }
   else
   {
@@ -35,5 +36,6 @@
       <input id="id" name="id" type="hidden" value="@vendorId">
       <button type="submit" id="delete-vendor" class="btn btn-block">DELETE VENDOR</button>
     </form>
+    <p>@Model["vendor"].Name: @Model["vendor"].Description</p>
   }
 </div>
