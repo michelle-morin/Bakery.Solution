@@ -11,6 +11,10 @@
   @if (@Model["orders"].Count == 0)
   {
     <h1>There are currently no orders for @Model["vendor"].Name</h1>
+
+    <div class="well fake-button home-button">
+      <center><a href='/vendors/@Model["vendor"].Id/orders/new'>ADD NEW ORDER</a></center>
+    </div>
   }
   else
   {
