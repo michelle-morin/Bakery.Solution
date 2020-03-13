@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-image: url("/img/BreadImg.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -136,4 +136,9 @@ label {
 
 h4 {
   color: #b46702;
+}
+
+.well p {
+  margin-top: 2%;
+  text-align: center;
 }
