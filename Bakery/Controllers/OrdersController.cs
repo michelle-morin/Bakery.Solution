@@ -23,5 +23,13 @@ namespace Bakery.Controllers
       model.Add("order", currentOrder);
       return View(model);
     }
+
+    [HttpPost("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Destroy(string strOrderId)
+    {
+      int orderId = int.Parse(strOrderId);
+      Order.DeleteOrder(orderId);
+      return View("/");
+    }
   }
 }
