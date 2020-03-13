@@ -57,5 +57,33 @@ namespace Bakery.Controllers
       model.Add("orders", vendorOrders);
       return View(model);
     }
+
+    [HttpPost("/vendors/{vendorId}/orders/")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string stringOrderPrice, string orderDate)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      try
+      {
+        if (String.IsNullOrWhiteSpace(orderTitle) || String.IsNullOrWhiteSpace(orderDescription) || String.IsNullOrWhiteSpace(orderDate) || String.IsNullOrWhiteSpace(stringOrderPrice))
+        {
+          throw new System.InvalidOperationException("invalid input");
+        }
+        else
+        {
+          int orderPrice = int.Parse(stringOrderPrice);
+          Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+          foundVendor.AddOrder(newOrder);
+          List<Order> vendorOrders = foundVendor.Orders;
+          model.Add("vendor", foundVendor);
+          model.Add("orders", vendorOrders);
+          return View("Show", model);
+        }
+      }
+      catch (Exception ex)
+      {
+        return View("Error", ex.Message);
+      }
+    }
   }
 }
