@@ -1,0 +1,52 @@
+@{
+  Layout = "_Layout";
+}
+
+@{
+  int orderId = @Model["order"].Id;
+  int vendorId = @Model["vendor"].Id;
+  string title = @Model["order"].Title;
+  string description = @Model["order"].Description;
+  double price = @Model["order"].Price;
+  string date = @Model["order"].Date;
+  string paid = @Model["order"].Paid;
+}
+
+<div class="well">
+  <h3>Edit order details</h3>
+
+  <form action="/vendors/@vendorId/orders/@orderId" method="post">
+    <input id="strVendorId" name="strVendorId" type="hidden" value="@vendorId">
+    <input id="strOrderId" name="strOrderId" type="hidden" value="@orderId">
+    <div class="form-group">
+      <label for="orderTitle">Order Title:</label>
+      <input id="orderTitle" name="orderTitle" type="text" class="form-control" value="@title" required>
+    </div>
+    <div class="form-group">
+      <label for="orderDate">Order Date:</label>
+      <input id="orderDate" name="orderDate" type="date" class="form-control" value="@date" required>
+    </div>
+    <div class="form-group">
+      <label for="stringOrderPrice">Price:</label>
+      <input id="stringOrderPrice" name="stringOrderPrice" type="double" value="@price" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="orderDescription">Description:</label>
+      <input id="orderDescription" name="orderDescription" type="text" class="form-control" value="@description" required>
+    </div>
+    <h4>Invoice paid?</h4>
+    <div class="radio">
+      <label>
+        <input type="radio" name="paid" value="Pending payment">
+        No
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="paid" value="Paid">
+        Yes
+      </label>
+    </div>
+    <button class="btn btn-block" type="submit">SAVE CHANGES</button>
+  </form>
+</div>
