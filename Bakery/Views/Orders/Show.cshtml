@@ -1,6 +1,10 @@
 @{
   Layout = "_Layout";
 }
+@{
+  int vendorId = @Model["vendor"].Id;
+  int orderId = @Model["order"].Id;
+}
 
 <div class="well">
   <h1>@Model["order"].Title</h1>
@@ -11,7 +15,8 @@
     <li>Description: @Model["order"].Description</li>
   </ul>
 
-  <form action="/orders/delete" method="post">
+  <form action="/vendors/@vendorId/orders/@orderId" method="post">
+    <input id="strOrderId" name="strOrderId" type="hidden" value="@orderId">
     <button type="submit" class="btn">Delete this order</button>
   </form>
 </div>
