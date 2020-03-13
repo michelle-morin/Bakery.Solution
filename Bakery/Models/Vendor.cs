@@ -74,5 +74,16 @@ namespace Bakery.Models
         }
       }
     }
+
+    public void DeleteOrder(int searchId)
+    {
+      for (int i=0; i< Orders.Count; i++)
+      {
+        if (Orders[i].Id == searchId)
+        {
+          Orders.RemoveAt(i);
+        }
+      }
+    }
   }
 }
