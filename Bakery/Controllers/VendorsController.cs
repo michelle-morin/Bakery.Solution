@@ -58,6 +58,14 @@ namespace Bakery.Controllers
       return View(model);
     }
 
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Destroy(string id)
+    {
+      int vendorId = int.Parse(id);
+      Vendor.Delete(vendorId);
+      return RedirectToAction("Index");
+    }
+
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string stringOrderPrice, string orderDate)
     {
@@ -84,14 +92,6 @@ namespace Bakery.Controllers
       {
         return View("Error", ex.Message);
       }
-    }
-
-    [HttpPost("/vendors/{vendorId}/orders/{orderId}")]
-    public ActionResult DeleteCurrentOrder(string strOrderId)
-    {
-      int orderId = int.Parse(strOrderId);
-      Order.DeleteOrder(orderId);
-      return RedirectToAction("Index");
     }
   }
 }
