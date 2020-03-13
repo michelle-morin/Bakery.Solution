@@ -2,7 +2,7 @@
 
 @if (@Model["orders"].Count == 0)
 {
-  <h3>There are currently no orders for @Model["vendor"]</h3>
+  <h3>There are currently no orders for @Model["vendor"].Name</h3>
 }
 else
 {
@@ -14,6 +14,6 @@ else
   </ol>
 }
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"]</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a></p>
 <p><a href='/vendors'>Return to vendor list</a></p>
 <p><a href='/'>Return to homepage</a></p>
