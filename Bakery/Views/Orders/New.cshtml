@@ -6,13 +6,21 @@
 
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-  <label for="orderTitle"></label>
-  <input id="orderTitle" name="orderTitle" type="text" required>
-  <label for="orderDate"></label>
-  <input id="orderDate" name="orderDate" type="date" required>
-  <label for="stringOrderPrice"></label>
-  <input id="stringOrderPrice" name="stringOrderPrice" type="double" required>
-  <label for="orderDescription"></label>
-  <input id="orderDescription" name="orderDescription" type="text" required>
-  <button type="submit">Add Order</button>
+  <div class="form-group">
+    <label for="orderTitle">Order Title:</label>
+    <input id="orderTitle" name="orderTitle" type="text" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="orderDate">Order Date:</label>
+    <input id="orderDate" name="orderDate" type="date" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="stringOrderPrice">Price:</label>
+    <input id="stringOrderPrice" name="stringOrderPrice" type="double" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="orderDescription">Description:</label>
+    <input id="orderDescription" name="orderDescription" type="text" class="form-control" required>
+  </div>
+  <button class="btn btn-block" type="submit">Add Order</button>
 </form>
