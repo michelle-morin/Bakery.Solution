@@ -1,8 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
 <div class="well">
-  <h1>@Model["order"].Title for @Model["vendor"].Name</h1>
+  <h1>@Model["order"].Title</h1>
   <ul>
+    <li>Ordered by: @Model["vendor"].Name</li>
     <li>Order date: @Model["order"].Date</li>
     <li>Price: $@Model["order"].Price</li>
     <li>Description: @Model["order"].Description</li>
   </ul>
+
+  <form action="/orders/delete" method="post">
+    <button type="submit" class="btn">Delete this order</button>
+  </form>
 </div>
