@@ -8,14 +8,35 @@ div#footer {
   padding:8px;
 }
 
-div#fake-button {
+div#navigation {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:#333;
+  padding: 8px;
+}
+
+div#nagivation a {
+  color:#CCC;
+}
+
+div.fake-button {
+  margin-top: 2%;
   border: 1px solid #111111;
-  border-radius: 20px;
+}
+
+div.fake-button a {
   color: #111111;
 }
 
-div#fake-button:hover {
+div.fake-button:hover {
   background-color: #111111;
+  cursor: pointer;
+}
+
+div.fake-button:hover a {
   color: #f5f5f5;
-  font-weight: bold
+  font-weight: bold;
+  text-decoration: none;
 }
