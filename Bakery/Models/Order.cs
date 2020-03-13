@@ -8,16 +8,18 @@ namespace Bakery.Models
     public string Description { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
+    public string Paid { get; set; }
     public int Id { get; }
     private static int _counter = 1;
     private static List<Order> _orders = new List<Order> {};
 
-    public Order(string title, string description, int price, string date)
+    public Order(string title, string description, int price, string date, string paid)
     {
       Title = title;
       Description = description;
       Price = price;
       Date = date;
+      Paid = paid;
       _orders.Add(this);
       Id = _counter;
       IncreaseCounter();
