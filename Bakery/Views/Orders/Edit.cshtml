@@ -12,9 +12,8 @@
   string paid = @Model["order"].Paid;
 }
 
+<h1>Edit order details</h1>
 <div class="well">
-  <h3>Edit order details</h3>
-
   <form action="/vendors/@vendorId/orders/@orderId" method="post">
     <input id="strVendorId" name="strVendorId" type="hidden" value="@vendorId">
     <input id="strOrderId" name="strOrderId" type="hidden" value="@orderId">
