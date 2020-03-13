@@ -2,8 +2,8 @@
   Layout = "_Layout";
 }
 
-<h1>Add a vendor here:</h1>
-<form action="/vendors" method="post">
+<h1>ADD NEW VENDOR DETAILS:</h1>
+<form action="/vendors" method="post" class="well">
   <div class="form-group">
     <label for="vendorName">Name of Vendor:</label>
     <input name="vendorName" id="vendorName" type="text" class="form-control" required>
@@ -12,8 +12,5 @@
     <label for="description">Description:</label>
     <input name="description" id="description" type="text" class="form-control" required>
   </div>
-  <button type="submit" class="btn btn-block">Add Vendor</button>
+  <button type="submit" class="btn btn-block">ADD</button>
 </form>
-
-<p><a href="/">Return to homepage</a></p>
-<p><a href="/vendors">Return to vendors</a></p>
