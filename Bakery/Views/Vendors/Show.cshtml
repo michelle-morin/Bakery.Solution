@@ -1,6 +1,9 @@
 @{
   Layout = "_Layout";
 }
+@{
+  int vendorId = @Model["vendor"].Id;
+}
 
 @using Bakery.Models;
 
@@ -17,6 +20,11 @@ else
     <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
   }
   </ol>
+
+  <form action="/vendors/@vendorId" method="post">
+    <input id="id" name="id" type="hidden" value="@vendorId">
+    <button type="submit" class="btn">Delete Vendor</button>
+  </form>
 }
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a></p>
