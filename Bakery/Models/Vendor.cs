@@ -55,5 +55,24 @@ namespace Bakery.Models
     {
       Orders.Add(order);
     }
+
+    public static void Delete(int searchId)
+    {
+      for (int i=0; i< _vendors.Count; i++)
+      {
+        if(_vendors[i] is Vendor)
+        {
+          if(_vendors[i].Id == searchId)
+          {
+            foreach(Order order in _vendors[i].Orders)
+            {
+              int orderId = order.Id;
+              Order.DeleteOrder(orderId);
+            }
+            _vendors.RemoveAt(i);
+          }
+        }
+      }
+    }
   }
 }
