@@ -7,26 +7,28 @@
 
 @using Bakery.Models;
 
-@if (@Model["orders"].Count == 0)
-{
-  <h3>There are currently no orders for @Model["vendor"].Name</h3>
-}
-else
-{
-  <h3>Current orders for @Model["vendor"].Name:</h3>
-  <ol>
-  @foreach (Order order in @Model["orders"])
+<div class="well">
+  @if (@Model["orders"].Count == 0)
   {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    <h1>There are currently no orders for @Model["vendor"].Name</h1>
   }
-  </ol>
+  else
+  {
+    <h1>Current orders for @Model["vendor"].Name:</h1>
+    <ol>
+    @foreach (Order order in @Model["orders"])
+    {
+      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    }
+    </ol>
 
-  <form action="/vendors/@vendorId" method="post">
-    <input id="id" name="id" type="hidden" value="@vendorId">
-    <button type="submit" class="btn">Delete Vendor</button>
-  </form>
-}
+    <div class="well fake-button home-button">
+      <center><a href='/vendors/@Model["vendor"].Id/orders/new'>ADD NEW ORDER</a></center>
+    </div>
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"].Name</a></p>
-<p><a href='/vendors'>Return to vendor list</a></p>
-<p><a href='/'>Return to homepage</a></p>
+    <form action="/vendors/@vendorId" method="post">
+      <input id="id" name="id" type="hidden" value="@vendorId">
+      <button type="submit" id="delete-vendor" class="btn btn-block">DELETE VENDOR</button>
+    </form>
+  }
+</div>
