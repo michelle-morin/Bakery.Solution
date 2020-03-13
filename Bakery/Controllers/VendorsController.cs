@@ -20,6 +20,31 @@ namespace Bakery.Controllers
       return View();
     }
 
-    
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string description)
+    {
+      try
+      {
+        if (String.IsNullOrWhiteSpace(vendorName) || String.IsNullOrWhiteSpace(description))
+        {
+          throw new System.InvalidOperationException("invalid input");
+        }
+        else
+        {
+          Vendor newVendor = new Vendor(vendorName, description);
+          return RedirectToAction("Index");
+        }
+      }
+      catch(Exception ex)
+      {
+        return View("Error", ex.Message);
+      }
+    }
+
+    [HttpGet("/error")]
+    public ActionResult Error(string message)
+    {
+      return View(message);
+    }
   }
 }
