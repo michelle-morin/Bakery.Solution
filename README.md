@@ -6,14 +6,15 @@
 
 ## Description
 
-_This project (accessible on [Github](https://github.com/michelle-morin/Bakery.Solution)) is a web application that . . ._ 
+_This project (accessible on [Github](https://github.com/michelle-morin/Bakery.Solution)) is an MVC web application for Pierre's Bakery, to help Pierre keep track of vendors that purchase baked goods from him and the orders belonging to those vendors. The homepage of the application is a splash page welcoming Pierre and providing him with a link to a vendors page. The vendors page contains a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new vendor object is saved in a static list of vendors and Pierre is routed back to the homepage. Pierre can also click a vendor's name to route to a page that displays all of that vendor's orders, or click a link to creare a new order for a particular vendor._ 
 
 ## Specifications:
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------:|
-|  |  |  | 
-
+| Application creates an instance of an order object having properties for the title, description, price, and date of the order | form submitted with title, description, price, and date fields completed | new order object created |
+| Application creates an instance of a vendor object having properties for vendor name, description of vendor, and a list of orders belonging to the vendor | form submitted with vendor name and description fields completed | new vendor object created |
+| Each new vendor is added to a static list of vendors | new vendor object created | static list of vendors now incldues newly added vendor |
 
 ## Setup/Installation Requirements
 
