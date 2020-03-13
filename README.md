@@ -6,18 +6,21 @@
 
 ## Description
 
-_This project (accessible on [Github](https://github.com/michelle-morin/Bakery.Solution)) is an MVC web application for Pierre's Bakery, to help Pierre keep track of vendors that purchase baked goods from him and the orders belonging to those vendors. The homepage of the application is a splash page welcoming Pierre and providing him with a link to a vendors page. The vendors page contains a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new vendor object is saved in a static list of vendors and Pierre is routed back to the homepage. Pierre can also click a vendor's name to route to a page that displays all of that vendor's orders, or click a link to creare a new order for a particular vendor._ 
+_This project (accessible on [Github](https://github.com/michelle-morin/Bakery.Solution)) is an ASP.NET Core MVC web application for Pierre's Bakery. The application helps Pierre track vendors that purchase baked goods from Pierre's Bakery, as well as the order(s) belonging to each vendor. The homepage of the application includes a link to view a list of all vendors. The vendors page contains an "add vendor" URL, whink links to a form for adding a new Vendor to the vendors list. After submitting the form, the application forms a new vendor object and returns to the list of vendors. Each vendor's name is clickable to route to a page listing all orders for that vendor. Each order listed is clickable to route to a page listing order details, as well as the option to edit or delete the order. On a detail page for a particular vendor, an "add order" button routes to a form for creating a new order object and a "delete vendor" button deletes the vendor and all associated orders from Pierre's Bakery Vender Tracker._ 
 
 ## Specifications:
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------:|
-| Application creates an instance of an order object having properties for the title, description, price, date of the order, and ID | form submitted with title, description, price, and date fields completed | new order object created |
+| Application creates an instance of an order object having properties for the title, description, price, date of the order, invoice status (paid/unpaid), and a unique ID | form submitted with title, description, price, invoice status, and date fields completed | new order object created |
 | Each new order has unique Id | new order object created | Id property of order object is 1 greater than prior order object's Id |
-| Application allows user to delete specific orders | user selects delete order button | order is removed from list of all orders |
-| Application creates an instance of a vendor object having properties for vendor name, description of vendor, a list of orders belonging to the vendor, and an ID | form submitted with vendor name and description fields completed | new vendor object created |
+| Each new order is added to static list of orders | new order object created | static list of all orders now includes order object |
+| Application creates an instance of a vendor object having properties for vendor name, description of vendor, a list of orders belonging to the vendor, and a unique ID | form submitted with vendor name and description fields completed | new vendor object created |
 | Each new vendor is added to a static list of vendors | new vendor object created | static list of vendors now incldues newly added vendor |
-| Application allows user (Pierre) to add orders to a specific vendor's list of orders | Pierre clicks link (on specific vendor page) to add an order | link routes to form for adding new order for that particular vendor |
+| Application routes to error view when order details or vendor details are input as null or whitespace | user submits new order form with null or whitespace inputs | Error view displays "invalid input" |
+| Application allows user to delete specific orders | user selects delete order button | order is removed from static list of all orders, as well as from the parent Vendor object's Orders list |
+| Application allows user to edit details for a specific order | user clicks "edit order" button | webpage routes to form for editing properties of the order object |
+| Application allows user to delete a specific vendor from the vendors list | user clicks "delete vendor" button | vendor is removed from static list of vendors and all orders corresponding to the deleted vendor are deleted from static list of orders |
 
 ## Setup/Installation Requirements
 
@@ -45,15 +48,19 @@ _Confirm that you have navigated to the Bakery.Solution directory (e.g., by ente
 
 _To view/edit the source code of this application, open the contents of the Bakery.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal)._
 
-_Run this console application by entering the following commands in Terminal (macOS) or PowerShell (Windows):_
+_Run this application by entering the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``cd Bakery``
-* ``dotnet run``
+* ``dotnet restore``
+* ``dotnet build``
+* ``dotnet run`` or ``dotnet watch run``
 
 ## Technologies Used
 * _Git_
 * _C#_
 * _ASP.NET Core MVC_
 * _dotnet script_
+* _Bootstrap_
+* _CSS_
 
 ### License
 
