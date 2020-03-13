@@ -1,4 +1,4 @@
-div#footer {
+#footer {
   position:fixed;
   bottom:0px;
   left:0px;
@@ -8,34 +8,54 @@ div#footer {
   padding:8px;
 }
 
-div#navigation {
+#navigation {
   position:fixed;
   top:0px;
   left:0px;
   width:100%;
   background:#333;
-  padding: 8px;
+  height: 60px;
 }
 
-div#nagivation a {
+#homepage {
+  position: fixed;
+  left: 15%;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: .5%;
+}
+
+#vendors-list {
+  position: fixed;
+  right: 15%;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 0.5%;
+}
+
+#nagivation a {
   color:#CCC;
 }
 
-div.fake-button {
+.render-body {
+  margin-top: 15%;
+}
+
+.fake-button {
   margin-top: 2%;
   border: 1px solid #111111;
 }
 
-div.fake-button a {
+.fake-button a {
   color: #111111;
 }
 
-div.fake-button:hover {
+.fake-button:hover {
   background-color: #111111;
   cursor: pointer;
 }
 
-div.fake-button:hover a {
+.fake-button:hover a {
   color: #f5f5f5;
   font-weight: bold;
   text-decoration: none;
