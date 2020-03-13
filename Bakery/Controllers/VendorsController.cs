@@ -58,7 +58,7 @@ namespace Bakery.Controllers
       return View(model);
     }
 
-    [HttpPost("/vendors/{vendorId}/orders/")]
+    [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string stringOrderPrice, string orderDate)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
