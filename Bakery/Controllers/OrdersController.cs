@@ -29,7 +29,7 @@ namespace Bakery.Controllers
     {
       int orderId = int.Parse(strOrderId);
       Order.DeleteOrder(orderId);
-      return View("/");
+      return View();
     }
   }
 }
