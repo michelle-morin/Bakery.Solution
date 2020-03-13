@@ -7,9 +7,10 @@ namespace Bakery.Controllers
   public class OrdersController : Controller
   {
     [HttpGet("/vendors/{vendorId}/orders/new")]
-    public ActionResult New()
+    public ActionResult New(int vendorId)
     {
-      return View();
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
   }
