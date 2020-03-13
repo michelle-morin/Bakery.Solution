@@ -11,10 +11,13 @@
   @if (@Model["orders"].Count == 0)
   {
     <h1>There are currently no orders for @Model["vendor"].Name</h1>
-
     <div class="well fake-button home-button">
       <center><a href='/vendors/@Model["vendor"].Id/orders/new'>ADD NEW ORDER</a></center>
     </div>
+    <form action="/vendors/@vendorId" method="post">
+      <input id="id" name="id" type="hidden" value="@vendorId">
+      <button type="submit" id="delete-vendor" class="btn btn-block">DELETE VENDOR</button>
+    </form>
   }
   else
   {
@@ -25,11 +28,9 @@
       <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
     }
     </ol>
-
     <div class="well fake-button home-button">
       <center><a href='/vendors/@Model["vendor"].Id/orders/new'>ADD NEW ORDER</a></center>
     </div>
-
     <form action="/vendors/@vendorId" method="post">
       <input id="id" name="id" type="hidden" value="@vendorId">
       <button type="submit" id="delete-vendor" class="btn btn-block">DELETE VENDOR</button>
