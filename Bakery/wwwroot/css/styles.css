@@ -16,8 +16,8 @@ body {
   bottom:0px;
   left:0px;
   width:100%;
-  color:#CCC;
-  background:#333;
+  color:#f5f5f5;
+  background:#18B3C4;
   padding:8px;
 }
 
@@ -26,7 +26,7 @@ body {
   top:0px;
   left:0px;
   width:100%;
-  background:#333;
+  background:#18B3C4;
   height: 60px;
 }
 
@@ -46,8 +46,8 @@ body {
   margin-bottom: 0.5%;
 }
 
-#nagivation a {
-  color:#CCC;
+#homepage a, #vendors-list a {
+  color:#f5f5f5;
 }
 
 .render-body {
@@ -59,7 +59,8 @@ body {
 }
 
 .well {
-  background-color: #f5f5f59d;
+  background-color: #f5f5f5b0;
+  border: 2px solid #18B3C4;
 }
 
 .fake-button {
@@ -77,12 +78,13 @@ body {
 }
 
 .fake-button:hover {
-  background-color: #f5f5f59d;
-  color: #18B3C4;
+  background-color: #b46702;
+  border: 1px solid #b46702;
+  color: #f5f5f5;
 }
 
 .fake-button:hover a {
-  color: #18B3C4;
+  color: #f5f5f5;
   text-decoration: none;
 }
 
@@ -95,16 +97,42 @@ h1 {
 }
 
 .btn {
-  border: 1px solid #f5f5f5;
   color: #f5f5f5;
-  background-color: #111111;
+  background-color: #18B3C4;
+  border: 1px solid #18B3C4;
 }
 
-ul.vendors li {
+.btn:hover {
+  color: #f5f5f5;
+  background-color: #b46702;
+  border: 1px solid #b46702;
+}
+
+ol li, ul li {
   font-size: x-large;
-  list-style-type: square;
+  list-style-type: circle;
+  color: #b46702;
 }
 
-ul.vendors li a {
-  color: #111111;
+ol li a, ul li a {
+  color: #b46702;
+}
+
+button#delete-vendor, button#delete-order {
+  width: 50%;
+  margin-left: 25%;
+  border: 1px solid #f5f5f5;
+}
+
+button#delete-vendor:hover, button#delete-order:hover {
+  border: 1px solid #b46702;
+}
+
+label {
+  color: #b46702;
+  font-size: large;
+}
+
+h4 {
+  color: #b46702;
 }
