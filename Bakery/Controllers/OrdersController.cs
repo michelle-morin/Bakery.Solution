@@ -13,5 +13,16 @@ namespace Bakery.Controllers
       return View(vendor);
     }
 
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order currentOrder = Order.Find(orderId);
+      Vendor currentVendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("vendor", currentVendor);
+      model.Add("order", currentOrder);
+      return View(model);
+    }
+
   }
 }
