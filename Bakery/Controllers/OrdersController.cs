@@ -23,6 +23,5 @@ namespace Bakery.Controllers
       model.Add("order", currentOrder);
       return View(model);
     }
-
   }
 }

@@ -85,5 +85,13 @@ namespace Bakery.Controllers
         return View("Error", ex.Message);
       }
     }
+
+    [HttpPost("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult DeleteCurrentOrder(string strOrderId)
+    {
+      int orderId = int.Parse(strOrderId);
+      Order.DeleteOrder(orderId);
+      return RedirectToAction("Index");
+    }
   }
 }
