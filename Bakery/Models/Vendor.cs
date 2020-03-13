@@ -17,6 +17,7 @@ namespace Bakery.Models
       Description = description;
       Id = _counter;
       Orders = new List<Order> {};
+      _vendors.Add(this);
       IncreaseCounter();
     }
 
