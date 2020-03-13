@@ -13,6 +13,7 @@
     <li>Order date: @Model["order"].Date</li>
     <li>Price: $@Model["order"].Price</li>
     <li>Description: @Model["order"].Description</li>
+    <li>Invoice status: @Model["order"].Paid</li>
   </ul>
 
   <form action="/vendors/@vendorId/orders/@orderId" method="post">

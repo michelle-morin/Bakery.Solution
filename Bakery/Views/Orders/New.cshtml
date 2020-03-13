@@ -22,5 +22,18 @@
     <label for="orderDescription">Description:</label>
     <input id="orderDescription" name="orderDescription" type="text" class="form-control" required>
   </div>
+  <h4>Invoice paid?</h4>
+  <div class="radio">
+    <label>
+      <input type="radio" name="paid" value="Pending payment" checked>
+      No
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="paid" value="Paid">
+      Yes
+    </label>
+  </div>
   <button class="btn btn-block" type="submit">Add Order</button>
 </form>
