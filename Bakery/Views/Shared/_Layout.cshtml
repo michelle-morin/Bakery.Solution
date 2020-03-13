@@ -9,7 +9,9 @@
   <body>
     <div class="container">
       @Html.Partial("Navigation")
-      @RenderBody()
+      <div class="render-body">
+        @RenderBody()
+      </div>
       @Html.Partial("Footer")
     </div>
   </body>
