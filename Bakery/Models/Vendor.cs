@@ -20,7 +20,7 @@ namespace Bakery.Models
       IncreaseCounter();
     }
 
-    public static IncreaseCounter()
+    public static void IncreaseCounter()
     {
       _counter++;
     }
