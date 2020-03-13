@@ -16,9 +16,13 @@
     <li>Invoice status: @Model["order"].Paid</li>
   </ul>
 
-  <form action="/vendors/@vendorId/orders/@orderId" method="post">
+  <form action="/vendors/@vendorId/orders/@orderId/delete" method="post">
     <input id="strOrderId" name="strOrderId" type="hidden" value="@orderId">
     <input id="strVendorId" name="strVendorId" type="hidden" value="@vendorId">
-    <button type="submit" class="btn">Delete this order</button>
+    <button type="submit" class="btn">DELETE ORDER</button>
   </form>
+
+  <div class="fake-button">
+    <a href="/vendors/@vendorId/orders/@orderId/edit">EDIT ORDER</a>
+  </div>
 </div>
