@@ -66,6 +66,5 @@ namespace Bakery.Models
         }
       }
     }
-
   }
 }
