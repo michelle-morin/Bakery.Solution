@@ -20,10 +20,10 @@ namespace Bakery.Models
       Date = date;
       _orders.Add(this);
       Id = _counter;
-      IncreaseId();
+      IncreaseCounter();
     }
 
-    public static void IncreaseId()
+    public static void IncreaseCounter()
     {
       _counter++;
     }
