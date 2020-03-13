@@ -1,0 +1,19 @@
+@using Bakery.Models;
+
+@if (@Model["orders"].Count == 0)
+{
+  <h3>There are currently no orders for @Model["vendor"]</h3>
+}
+else
+{
+  <ol>
+  @foreach (Order order in @Model["orders"])
+  {
+    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+  }
+  </ol>
+}
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order for @Model["vendor"]</a></p>
+<p><a href='/vendors'>Return to vendor list</a></p>
+<p><a href='/'>Return to homepage</a></p>
