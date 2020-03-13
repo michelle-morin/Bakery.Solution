@@ -4,11 +4,15 @@
 
 <h1>Add a vendor here:</h1>
 <form action="/vendors" method="post">
-  <label for="vendorName">Name of Vendor:</label>
-  <input name="vendorName" id="vendorName" type="text" required>
-  <label for="description">Description:</label>
-  <input name="description" id="description" type="text" required>
-  <button type="submit">Add Vendor</button>
+  <div class="form-group">
+    <label for="vendorName">Name of Vendor:</label>
+    <input name="vendorName" id="vendorName" type="text" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <input name="description" id="description" type="text" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-block">Add Vendor</button>
 </form>
 
 <p><a href="/">Return to homepage</a></p>
