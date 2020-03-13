@@ -12,9 +12,12 @@ _This project (accessible on [Github](https://github.com/michelle-morin/Bakery.S
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------:|
-| Application creates an instance of an order object having properties for the title, description, price, and date of the order | form submitted with title, description, price, and date fields completed | new order object created |
-| Application creates an instance of a vendor object having properties for vendor name, description of vendor, and a list of orders belonging to the vendor | form submitted with vendor name and description fields completed | new vendor object created |
+| Application creates an instance of an order object having properties for the title, description, price, date of the order, and ID | form submitted with title, description, price, and date fields completed | new order object created |
+| Each new order has unique Id | new order object created | Id property of order object is 1 greater than prior order object's Id |
+| Application allows user to delete specific orders | user selects delete order button | order is removed from list of all orders |
+| Application creates an instance of a vendor object having properties for vendor name, description of vendor, a list of orders belonging to the vendor, and an ID | form submitted with vendor name and description fields completed | new vendor object created |
 | Each new vendor is added to a static list of vendors | new vendor object created | static list of vendors now incldues newly added vendor |
+| Application allows user (Pierre) to add orders to a specific vendor's list of orders | Pierre clicks link (on specific vendor page) to add an order | link routes to form for adding new order for that particular vendor |
 
 ## Setup/Installation Requirements
 
