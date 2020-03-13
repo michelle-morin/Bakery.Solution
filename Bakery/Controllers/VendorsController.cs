@@ -79,7 +79,7 @@ namespace Bakery.Controllers
         }
         else
         {
-          int orderPrice = int.Parse(stringOrderPrice);
+          double orderPrice = double.Parse(stringOrderPrice);
           Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate, paid);
           foundVendor.AddOrder(newOrder);
           List<Order> vendorOrders = foundVendor.Orders;
